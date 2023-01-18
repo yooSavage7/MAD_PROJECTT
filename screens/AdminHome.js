@@ -1,119 +1,66 @@
 import React, { Component } from 'react';  
 import {  ScrollView, View, Image, Text, TextInput,Button, StyleSheet, StatusBar ,TouchableOpacity,Alert } from 'react-native';  
+import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
+import FormInput from '../components/FormInput';
+import FormButton from '../components/FormButton';
 
-function AdminHome(navigation){
+
+function AdminHome(navigation, route){
+
+    const[question, setquestion] = React.useState('')
+    const[correctanswer, setcorrectAnswer] = React.useState('')
+    const[opt2, setopt2] = React.useState('')
+    const[opt3, setopt3] = React.useState('')
+    const[opt4, setopt4] = React.useState('')
+
+    const handleQuestion = ()=>{
+        alert("Quiz Saved")
+
+    }
         return(
-            <View style={styles.container}>
-            <View style={styles.title}>
-            <Text style={styles.titletext}> Questions:</Text>
+            <KeyboardAvoidingView style={{flex:1,}}>
+            <ScrollView style={styles.scroll}>
+            <View style={styles.view}>
+            <Text style={styles.txt}>
+            Add Questions!
+            </Text>
+            <FormInput labelText='Question'
+             placeholderText='Enter Question'
+            onChangeText={val =>setquestion(val)}
+            value={question}
+            />
+            <View style={{marginTop:20, }}>
+            <FormInput labelText='Correct Answer' onChangeText={val => setcorrectAnswer(val)} value={correctanswer}/>
+            <FormInput labelText='Option 2' onChangeText={val => setopt2(val)} value={opt2}/>
+            <FormInput labelText='Option 3' onChangeText={val => setopt3(val)} value={opt3}/>
+            <FormInput labelText='Option 4' onChangeText={val => setopt4(val)} value={opt4}/>
 
             </View>
-            <View style={styles.header}>
-            <Text style={styles.question}>Q. What will be the result of this question:</Text>
-
-            </View>
-            <View style={styles.options}>
-            <TouchableOpacity style={styles.optionButton}>
-                <Text style={styles.option}> Option 1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.optionButton}>
-                <Text style={styles.option}> Option 2</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.optionButton}>
-                <Text style={styles.option}> Option 3</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.optionButton}>
-                <Text style={styles.option}> Option 4</Text>
-            </TouchableOpacity>
-            <View style={styles.imagecon}>
-                <Image
-                source={{
-                    uri:'https://iconscout.com/illustration/online-quiz-5718736'
-                }}
-                />
-
-                
-            </View>
-
-            </View>
-            <View style={styles.bottom}>
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttontext}>Submit</Text>
-            </TouchableOpacity>
+            <FormButton labelText='Save Question' handleonPress={handleQuestion}/>
 
             </View>
 
-            </View>
+            </ScrollView>
 
-        );
+            </KeyboardAvoidingView>
+         );
     
 }
 const styles = StyleSheet.create({
-    container: {
-      padding:12,
-      height:"100%",
-      paddingHorizontal:20,
-      backgroundColor:"aliceblue"
-    },
-    header:{
-        marginVertical:12,
-    },
-    options:{
-        marginVertical:12,
+    scroll:{
         flex:1,
-
+        backgroundColor:'#D7ECFE',
     },
-    bottom:{
-        marginBottom:12,
-        paddingVertical:16,
-        justifyContent:"center",
-        flexDirection:"row",
-    },
-    button:{
-        backgroundColor:"#1A759F",
-        padding:12,
-        paddingHorizontal:16,
-        borderRadius:16,
-        alignItems:"center",
-        marginBottom:30,
+    txt:{
+        fontSize:20,
+        textAlign:'center',
+        color:'darkred',
+        fontWeight:'900',
+        marginBottom:20
         
     },
-    buttontext:{
-        fontSize:18,
-        fontWeight:"600",
-        color:"white",
+    view:{
+        padding:20,
     },
-    question:{
-        fontSize:28,
-        fontWeight:"bold",
-
-    },
-    option:{
-        fontSize:18,
-        color:"white",
-        fontWeight:"bold",
-    },
-    optionButton:{
-        paddingVertical:12,
-        marginVertical:6,
-        backgroundColor:"#34A0A4",
-        paddingHorizontal:12,
-        borderRadius:15,
-    },
-    imagecon:{
-        alignItems:"center",
-        justifyContent:"center",
-    },
-    title:{
-        alignItems:"center",
-    },
-    titletext:{
-        fontSize:28,
-        fontWeight:"bold",
-        color:"darkred",
-        marginVertical:20,
-
-    },
-
 })
 export default AdminHome

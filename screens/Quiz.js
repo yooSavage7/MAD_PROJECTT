@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {  ScrollView, View, Image, Text, TextInput,Button, StyleSheet, StatusBar ,TouchableOpacity,Alert } from 'react-native';  
 
 function Quiz({navigation}){ 
+    const resultshow=()=>{
+        alert("Your Score is 100%")
+    }
         return(
             <ScrollView>
             <View style={styles.container}>
@@ -153,7 +156,7 @@ function Quiz({navigation}){
             <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate("Result")}>
                 <Text style={styles.buttontext}>End </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate("Result")}>
+            <TouchableOpacity style={styles.button} onPress={resultshow}>
                 <Text style={styles.buttontext}>Next</Text>
             </TouchableOpacity>
 
@@ -170,7 +173,7 @@ const styles = StyleSheet.create({
     container: {
       padding:12,
       height:"100%",
-      backgroundColor:"aliceblue"
+      backgroundColor:"#D7ECFE"
     },
     header:{
         marginVertical:12,
@@ -215,7 +218,7 @@ const styles = StyleSheet.create({
     optionButton:{
         paddingVertical:12,
         marginVertical:6,
-        backgroundColor:"#34A0A4",
+        backgroundColor:"#AA84C2",
         paddingHorizontal:12,
         borderRadius:15,
     },

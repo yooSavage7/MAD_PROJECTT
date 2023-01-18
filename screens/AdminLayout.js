@@ -27,7 +27,7 @@ function AdminLayout({navigation}){
               marginLeft: 15,
               marginTop: 30
             }}>
-               <TouchableOpacity>
+               <TouchableOpacity onPress={()=>navigation.navigate("CreateQuiz")}>
             <View style={styles.card} >
             
           
@@ -36,7 +36,7 @@ function AdminLayout({navigation}){
            
             </View>
             </TouchableOpacity>  
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate("CreateQuiz")}>
             <View style={styles.card2} >
             
             
@@ -54,7 +54,7 @@ function AdminLayout({navigation}){
               flexWrap:'wrap',
               marginLeft: 15
             }}>
-               <TouchableOpacity>
+               <TouchableOpacity onPress={()=>navigation.navigate("CreateQuiz")}>
             <View style={styles.card1} >
             
           
@@ -63,7 +63,7 @@ function AdminLayout({navigation}){
            
             </View>
             </TouchableOpacity>  
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate("CreateQuiz")}>
             <View style={styles.card3} >
             
             
@@ -83,7 +83,7 @@ function AdminLayout({navigation}){
 }
 const styles = StyleSheet.create({
     container: {
-      backgroundColor:"aliceblue",
+      backgroundColor:"#D7ECFE",
       height:"100%"
     
      

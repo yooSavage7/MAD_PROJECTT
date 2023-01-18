@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width:"100%",
     height:"100%",
-    backgroundColor:"aliceblue"
+    backgroundColor:"#D7ECFE"
   },
   header:{
     height:50,

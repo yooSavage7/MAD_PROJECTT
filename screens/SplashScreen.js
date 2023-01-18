@@ -33,9 +33,9 @@ const SplashScreen =({navigation})=>{
             <View style={{
                 width:'100%',
                 height:800,
-                backgroundColor:'aliceblue',
+                backgroundColor:'#D7ECFE',
                 marginTop:150,
-                borderTopLeftRadius:150,
+                borderTopLeftRadius:180,
                 flex:0.7,
                 elevation:100
             }}>

@@ -5,6 +5,7 @@ import { auth } from '../firebase/firebase.config';
 
 
 
+
 function Login({navigation}){ 
   const[email,setemail] = React.useState(null)
 const[password, setpass] = React.useState(null)
@@ -27,7 +28,7 @@ const[password, setpass] = React.useState(null)
             
             <View style={styles.imagecon}>
             <TouchableOpacity style={styles.header}>
-            <Text style={styles.head}>Login Page</Text>
+            <Text style={styles.head}>Login</Text>
 
             </TouchableOpacity>
             <Image style={styles.image} source={require("../images/login.png")} />
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width:"100%",
     height:"100%",
-    backgroundColor:"aliceblue"
+    backgroundColor:"#D7ECFE"
   },
   header:{
     height:50,
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
   imagecon: {
     alignItems:'center',
     justifyContent: "center",
-    marginTop:60,
+    marginTop:50,
 
   },
  
